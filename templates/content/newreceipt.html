@@ -1,0 +1,101 @@
+{{define "content"}}
+    <div class="columns">
+        <fieldset>
+            <legend>New Entry</legend>
+            <form action="/newreceipt" method="post" class="row">
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Receipt Date
+                    </div>
+                    <div class="columns small-6">
+                        <input type="date" name="receiptDate" value="{{.Receipt.ReceiptDate}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Client Name
+                    </div>
+                    <div class="columns small-6">
+                        <input type="text" name="clientName" value="{{.Receipt.ClientName}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Origin
+                    </div>
+                    <div class="columns small-6">
+                        <input type="text" name="origin" value="{{.Receipt.Origin}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Destination
+                    </div>
+                    <div class="columns small-6">
+                        <input type="text" name="destination" value="{{.Receipt.Destination}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Total Price
+                    </div>
+                    <div class="columns small-6">
+                        <input type="number" step="0.01" lang="en-150" name="totalPrice" value="{{.Receipt.TotalPrice}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Driver Name
+                    </div>
+                    <div class="columns small-6">
+                        <input type="text" lang="en-150" name="driverName" value="{{.Receipt.DriverName}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Plate Number
+                    </div>
+                    <div class="columns small-6">
+                        <input type="text" lang="en-150" name="plateNumber" value="{{.Receipt.PlateNumber}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Driver Cost
+                    </div>
+                    <div class="columns small-6">
+                        <input type="number"step="0.01" lang="en-150" name="driverCost" value="{{.Receipt.DriverCost}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Other Cost
+                    </div>
+                    <div class="columns small-6">
+                        <input type="number"step="0.01" lang="en-150" name="otherCost" value="{{.Receipt.OtherCost}}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Additional Remarks
+                    </div>
+                    <div class="columns small-6">
+                        <textarea type="text" lang="en-150" name="additionalRemarks" value="{{.Receipt.AdditionalRemarks}}"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-12 text-center">
+                        {{.Message}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-12 text-center">
+                        <button class="small">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+{{end}}

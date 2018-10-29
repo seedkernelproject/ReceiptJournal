@@ -1,0 +1,19 @@
+{{define "_header.html"}}
+<header class="row" >
+        <div class="row">
+            <nav class="columns">
+                <div class="row">
+                    <div class="columns small-4 item">
+                        <a href="/newreceipt"  class="{{if eq .Active "newreceipt"}} active {{end}}">New Receipt</a>
+                    </div>
+                    <div class="columns small-4 item">
+                        <a href="/cashflow" class="{{if eq .Active "cashflow"}} active {{end}}">Cash Flow</a>
+                    </div>
+                    <div class="columns small-4 item">
+                        <a href="/clientreceipt" class="{{if eq .Active "clientreceipt"}} active {{end}}">Client Receipt</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+</header>
+{{end}}

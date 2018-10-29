@@ -1,0 +1,91 @@
+{{define "content"}}
+    <div class="columns">
+        <fieldset>
+            <legend>Retrieved Entry</legend>
+            <form method="post" class="row">
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Receipt ID
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.InputDate}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Receipt Date
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.ReceiptDate}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Client Name
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.ClientName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Origin
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.Origin}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Destination
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.Destination}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Total Price
+                    </div>
+                    <div class="columns small-6">
+                        {{displayComma .Receipt.TotalPrice}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Driver Name
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.DriverName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Plate Number
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.PlateNumber}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="columns small-6 text-left">
+                        Additional Remarks
+                    </div>
+                    <div class="columns small-6">
+                        {{.Receipt.AdditionalRemarks}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    {{if not .Receipt.Status}}
+                    <div class="columns small-12 text-center">
+                        <button class="small">
+                            Update Payment Status
+                        </button>
+                    </div>
+                    {{end}}
+                </div>
+            </form>
+        </fieldset>
+    </div>
+{{end}}
