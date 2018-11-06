@@ -1,23 +1,30 @@
 package controller
 
 import (
-	"ReceiptJournal/viewmodel"
+	"ReceiptJournal/model"
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
 func registerAPIRoutes() {
-	http.HandleFunc("/api/cashflow", handleCashflowAPI)
+	http.HandleFunc("/api/receipts", handleReceipts)
 }
 
-func handleCashflowAPI(w http.ResponseWriter, r *http.Request) {
+func handleReceipts(w http.ResponseWriter, r *http.Request) {
 	if pusher, ok := w.(http.Pusher); ok {
 		pusher.Push("/css/app.css", &http.PushOptions{
 			Header: http.Header{"Content-Type": []string{"text/css"}},
 		})
 	}
 
-	data := viewmodel.NewCashflow()
-	json.NewEncoder(w).Encode(data)
-	w.Header().Add("Content-type", "text/html")
+	data := model.GetReceipts()
+	//json.NewEncoder(w).Encode(data)
+	dataJson, err := json.Marshal(data)
+	if err != nil {
+		panic(err)
+	}
+	w.Header().Add("Content-type", "application/json")
+	w.Write(dataJson)
+	fmt.Println("called")
 }

@@ -6,21 +6,21 @@ import (
 )
 
 type Receipt struct {
-	InputDate         string
-	ReceiptDate       string
-	ClientName        string
-	Origin            string
-	Destination       string
-	TotalPrice        float64
-	DriverName        string
-	PlateNumber       string
-	DriverCost        float64
-	OtherCost         float64
-	TotalCost         float64
-	Profit            float64
-	AdditionalRemarks string
-	Status            bool
-	PaidDate          string
+	InputDate         string  `json:"inputdate"`
+	ReceiptDate       string  `json:"receiptdate"`
+	ClientName        string  `json:"clientname"`
+	Origin            string  `json:"origin"`
+	Destination       string  `json:"destination"`
+	TotalPrice        float64 `json:"totalprice"`
+	DriverName        string  `json:"drivername"`
+	PlateNumber       string  `json:"platenumber"`
+	DriverCost        float64 `json:"drivercost"`
+	OtherCost         float64 `json:"othercost"`
+	TotalCost         float64 `json:"totalcost"`
+	Profit            float64 `json:"profit"`
+	AdditionalRemarks string  `json:"additionalremarks"`
+	Status            bool    `json:"status"`
+	PaidDate          string  `json:"paiddate"`
 }
 
 func SaveReceipt(r Receipt) {
