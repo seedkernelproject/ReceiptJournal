@@ -83,10 +83,10 @@ func connectToDatabase() *sql.DB {
 	db, err := sql.Open("cloudsqlpostgres", dsn)*/
 
 	dsn := fmt.Sprintf("host=%s dbname=%s user=%s password=%s sslmode=disable",
-		"localhost",
-		"ReceiptJournal",
-		"kelvin",
-		"8456594")
+		dbadd,
+		dbname,
+		dbusername,
+		dbpassword)
 
 	db, err := sql.Open("postgres", dsn)
 
