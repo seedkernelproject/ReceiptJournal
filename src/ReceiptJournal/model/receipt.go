@@ -11,11 +11,11 @@ type Receipt struct {
 	ClientName        string  `json:"clientname"`
 	Origin            string  `json:"origin"`
 	Destination       string  `json:"destination"`
-	TotalPrice        float64 `json:"totalprice"`
+	TotalPrice        float64 `json:"totalprice,string"`
 	DriverName        string  `json:"drivername"`
 	PlateNumber       string  `json:"platenumber"`
-	DriverCost        float64 `json:"drivercost"`
-	OtherCost         float64 `json:"othercost"`
+	DriverCost        float64 `json:"drivercost,string"`
+	OtherCost         float64 `json:"othercost,string"`
 	TotalCost         float64 `json:"totalcost"`
 	Profit            float64 `json:"profit"`
 	AdditionalRemarks string  `json:"additionalremarks"`
